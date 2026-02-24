@@ -3,69 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secondary School Report Card</title>
+    <title>JOEX HIGH SCHOOL - Report Card</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; padding: 20px; }
-        .report-card { background: white; width: 800px; margin: 0 auto; padding: 30px; border: 2px solid #333; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .header { text-align: center; border-bottom: 3px double #333; padding-bottom: 10px; margin-bottom: 20px; }
-        .header h1 { margin: 5px 0; color: #1a3a5f; text-transform: uppercase; }
-        .student-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; font-weight: bold; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border: 1px solid #333; padding: 10px; text-align: left; }
-        th { background-color: #f2f2f2; color: #333; }
-        .footer-section { margin-top: 30px; line-height: 1.8; }
-        .signature-line { border-bottom: 1px solid #333; display: inline-block; width: 250px; }
-        .grading-key { font-size: 0.85em; margin-top: 20px; padding: 10px; border: 1px dashed #777; }
-        @media print { body { background: none; padding: 0; } .report-card { border: none; box-shadow: none; width: 100%; } }
+        body { font-family: 'Arial', sans-serif; background-color: #f0f2f5; padding: 40px; color: #333; }
+        .report-card { background: #fff; width: 850px; margin: 0 auto; padding: 40px; border: 2px solid #1a3a5f; box-shadow: 0 0 20px rgba(0,0,0,0.15); position: relative; }
+        
+        /* Header Styling */
+        .header { text-align: center; border-bottom: 4px solid #1a3a5f; padding-bottom: 15px; margin-bottom: 25px; }
+        .school-name { font-size: 32px; font-weight: bold; color: #1a3a5f; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .motto { font-style: italic; color: #555; margin: 5px 0; font-size: 18px; }
+        .contact-info { font-size: 14px; color: #666; margin-top: 5px; }
+        
+        /* Student Info Section */
+        .student-details { display: flex; justify-content: space-between; margin-bottom: 30px; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
+        .info-group { line-height: 1.8; }
+        .info-label { font-weight: bold; color: #1a3a5f; min-width: 120px; display: inline-block; }
+
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 25px; background: #fff; }
+        th { background-color: #1a3a5f; color: white; padding: 12px; text-align: left; text-transform: uppercase; font-size: 14px; }
+        td { border: 1px solid #ccc; padding: 10px; font-size: 15px; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+
+        /* Footer & Signatures */
+        .summary { margin-top: 20px; }
+        .remarks-box { border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 4px; }
+        .signatures { display: flex; justify-content: space-between; margin-top: 40px; }
+        .sig-line { border-top: 1px solid #333; width: 200px; text-align: center; padding-top: 5px; font-weight: bold; font-size: 13px; }
+
+        .grading-key { font-size: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 10px; color: #777; text-align: center; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .report-card { box-shadow: none; border: 1px solid #000; width: 100%; }
+            button { display: none; }
+        }
     </style>
 </head>
 <body>
 
 <div class="report-card">
     <div class="header">
-        <h1>Joex High School - Mayuge</h1>
-        <p>P.O. Box 123, Mayuge, Uganda | Tel: +256 749918951</p>
-        <h2>STUDENT PROGRESS REPORT</h2>
+        <h1 class="school-name">JOEX HIGH SCHOOL</h1>
+        <p class="motto">"If one can, I can"</p>
+        <div class="contact-info">
+            Email: joexnk@gmail.com | Tel: 0749918954 <br>
+            <strong>STUDENT PROGRESS REPORT</strong>
+        </div>
     </div>
 
-    <div class="student-info">
-        <div>Name: </div>
-        <div>Class: </div>
-        <div>Term: </div>
-        <div>Year: 2026</div>
+    <div class="student-details">
+        <div class="info-group">
+            <div><span class="info-label">Student Name:</span> IGULU JOEL</div>
+            <div><span class="info-label">Student ID:</span> JX/2026/042</div>
+        </div>
+        <div class="info-group">
+            <div><span class="info-label">Class:</span> Senior One</div>
+            <div><span class="info-label">Term:</span> TERM ONE</div>
+        </div>
     </div>
 
     <table>
         <thead>
             <tr>
                 <th>Subject</th>
-                <th>Score (100)</th>
+                <th>Score (%)</th>
                 <th>Grade</th>
                 <th>Remarks</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>English Language</td><td>36</td><td>F9</td><td>Needs more effort</td></tr>
-            <tr><td>Mathematics</td><td>50</td><td>P7</td><td>Fair performance</td></tr>
-            <tr><td>Biology</td><td>55</td><td>C6</td><td>Good, keep it up</td></tr>
-            <tr><td>Chemistry</td><td>48</td><td>P8</td><td>Work harder</td></tr>
-            <tr><td>Physics</td><td>42</td><td>P8</td><td>Can do better</td></tr>
-            <tr><td>Geography</td><td>51</td><td>C6</td><td>Steady progress</td></tr>
-            <tr><td>History</td><td>60</td><td>C5</td><td>Very good</td></tr>
+            <tr><td>English Language</td><td>36</td><td>F9</td><td>Concentrate on grammar</td></tr>
+            <tr><td>Mathematics</td><td>50</td><td>P7</td><td>Average, aim higher</td></tr>
+            <tr><td>Biology</td><td>55</td><td>C6</td><td>Good effort</td></tr>
+            <tr><td>Chemistry</td><td>48</td><td>P8</td><td>More practice needed</td></tr>
+            <tr><td>Physics</td><td>42</td><td>P8</td><td>Fair</td></tr>
+            <tr><td>History</td><td>62</td><td>C5</td><td>Well done</td></tr>
+            <tr><td>Geography</td><td>51</td><td>C6</td><td>Good progress</td></tr>
         </tbody>
     </table>
 
-    <div class="footer-section">
-        <p><strong>Class Teacher's Remarks:</strong> Joel is a disciplined student but needs to focus more on language subjects to balance his performance.</p>
-        <p><strong>Headteacher's Remarks:</strong> Promising start. Focus on the weak areas in Term Two.</p>
-        <br>
-        <p><strong>Class Teacher Signature:</strong> <span class="signature-line"></span></p>
-        <p><strong>Headteacher Signature:</strong> <span class="signature-line"></span></p>
+    <div class="summary">
+        <div class="remarks-box">
+            <strong>Class Teacher's Comment:</strong> Joel is a hardworking student. However, he needs to devote more time to English and Physics to improve his overall aggregate.
+        </div>
+        <div class="remarks-box">
+            <strong>Headteacher's Comment:</strong> Consistent effort will lead to better results. Keep the motto "If one can, I can" in mind!
+        </div>
+    </div>
+
+    <div class="signatures">
+        <div class="sig-line">Class Teacher Signature</div>
+        <div class="sig-line">School Stamp & Headteacher</div>
     </div>
 
     <div class="grading-key">
-        <strong>Grading Scale:</strong> D1-D2: Distinction (80-100) | C3-C6: Credit (50-79) | P7-P8: Pass (40-49) | F9: Fail (0-39)
+        GRADING: D1 (80-100) | D2 (75-79) | C3 (70-74) | C4 (65-69) | C5 (60-64) | C6 (50-59) | P7 (45-49) | P8 (40-44) | F9 (0-39)
     </div>
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+    <button onclick="window.print()" style="padding: 10px 20px; cursor: pointer; background: #1a3a5f; color: white; border: none; border-radius: 5px;">Print Report Card</button>
 </div>
 
 </body>
